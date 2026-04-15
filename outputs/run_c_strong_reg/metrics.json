@@ -1,0 +1,116 @@
+{
+  "best_val_loss": 1.6285696453518337,
+  "best_val_acc": 0.3296296296296296,
+  "test_loss": 1.6021227333280774,
+  "test_acc": 0.34444444444444444,
+  "class_names": [
+    "Crazing",
+    "Inclusion",
+    "Patches",
+    "Pitted_Surface",
+    "Rolled-in_Scale",
+    "Scratches"
+  ],
+  "classification_report": {
+    "Crazing": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 45.0
+    },
+    "Inclusion": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 45.0
+    },
+    "Patches": {
+      "precision": 0.4909090909090909,
+      "recall": 0.6,
+      "f1-score": 0.54,
+      "support": 45.0
+    },
+    "Pitted_Surface": {
+      "precision": 0.3047619047619048,
+      "recall": 0.7111111111111111,
+      "f1-score": 0.4266666666666667,
+      "support": 45.0
+    },
+    "Rolled-in_Scale": {
+      "precision": 0.5,
+      "recall": 0.08888888888888889,
+      "f1-score": 0.1509433962264151,
+      "support": 45.0
+    },
+    "Scratches": {
+      "precision": 0.29411764705882354,
+      "recall": 0.6666666666666666,
+      "f1-score": 0.40816326530612246,
+      "support": 45.0
+    },
+    "accuracy": 0.34444444444444444,
+    "macro avg": {
+      "precision": 0.26496477378830324,
+      "recall": 0.3444444444444444,
+      "f1-score": 0.25429555469986737,
+      "support": 270.0
+    },
+    "weighted avg": {
+      "precision": 0.2649647737883032,
+      "recall": 0.34444444444444444,
+      "f1-score": 0.25429555469986737,
+      "support": 270.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      0,
+      0,
+      4,
+      34,
+      2,
+      5
+    ],
+    [
+      0,
+      0,
+      0,
+      5,
+      0,
+      40
+    ],
+    [
+      0,
+      0,
+      27,
+      17,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      5,
+      32,
+      0,
+      8
+    ],
+    [
+      0,
+      0,
+      11,
+      11,
+      4,
+      19
+    ],
+    [
+      0,
+      0,
+      8,
+      6,
+      1,
+      30
+    ]
+  ],
+  "resolved_data_dir": "data"
+}
