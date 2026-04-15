@@ -16,6 +16,32 @@ Mục tiêu của Lab 1 là huấn luyện mô hình MLP cho bài toán phân lo
 - Patience: 5
 - Augmentation: bật (`--augment`)
 
+### 2.2 Kiến trúc mạng MLP
+Mô hình được định nghĩa trong `src/model.py` với cấu hình mặc định:
+- Input: ảnh grayscale resize về `64x64`, flatten thành vector `4096` chiều.
+- Hidden layers: `4096 -> 512 -> 256 -> 64`.
+- Mỗi hidden layer gồm: `Linear + ReLU + Dropout`.
+- Output layer: `Linear(64 -> 6)` tương ứng 6 lớp lỗi.
+- Hàm mất mát: `CrossEntropyLoss`.
+
+Với batch đầu vào `x`, logits đầu ra được tính bởi chuỗi biến đổi:
+
+$$
+z_1 = W_1 x + b_1,\quad h_1 = \text{Dropout}(\text{ReLU}(z_1))
+$$
+
+$$
+z_2 = W_2 h_1 + b_2,\quad h_2 = \text{Dropout}(\text{ReLU}(z_2))
+$$
+
+$$
+z_3 = W_3 h_2 + b_3,\quad h_3 = \text{Dropout}(\text{ReLU}(z_3))
+$$
+
+$$
+	ext{logits} = W_4 h_3 + b_4
+$$
+
 ### 2.1 Các run đã chạy
 1. **Run A (baseline_adamw)**
 - optimizer: adamw
@@ -50,6 +76,14 @@ Nguồn số liệu: `metrics.json` trong từng thư mục output.
 - Run A: `outputs/baseline_adamw/curves.png`
 - Run B: `outputs/run_b_sgd/curves.png`
 - Run C: `outputs/run_c_strong_reg/curves.png`
+
+### 3.3 W&B dashboard (3 run)
+- Project: `csc4005-lab1-neu-mlp`
+- Run ID baseline: `vqjsjtja`
+- Run ID run_b_sgd: `kwo7wr5u`
+- Run ID run_c_strong_reg: `s1z9tl2i`
+
+Sau khi login W&B, đồng bộ bằng `wandb sync` để hiện đầy đủ trên dashboard online.
 
 Các artifact đầy đủ:
 - `best_model.pt`
@@ -87,6 +121,8 @@ Sử dụng model tốt nhất từ `outputs/run_b_sgd/best_model.pt`:
 - test accuracy: **0.4481**
 - classification report: `outputs/run_b_sgd/metrics.json`
 - confusion matrix: `outputs/run_b_sgd/confusion_matrix.png`
+- ví dụ dự đoán đúng: `outputs/run_b_sgd/examples_correct.png`
+- ví dụ dự đoán sai: `outputs/run_b_sgd/examples_wrong.png`
 
 ## 7. Trả lời câu hỏi tự kiểm tra
 1. **Vì sao cần tách train/validation/test?**
