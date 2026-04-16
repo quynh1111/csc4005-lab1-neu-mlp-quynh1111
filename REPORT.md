@@ -77,6 +77,15 @@ Nguồn số liệu: `metrics.json` trong từng thư mục output.
 - Run B: `outputs/run_b_sgd/curves.png`
 - Run C: `outputs/run_c_strong_reg/curves.png`
 
+**Run A - Learning Curves**
+![Run A Curves](outputs/baseline_adamw/curves.png)
+
+**Run B - Learning Curves**
+![Run B Curves](outputs/run_b_sgd/curves.png)
+
+**Run C - Learning Curves**
+![Run C Curves](outputs/run_c_strong_reg/curves.png)
+
 ### 3.3 W&B dashboard (3 run)
 - Project: `csc4005-lab1-neu-mlp`
 - Run ID baseline: `vqjsjtja`
@@ -123,6 +132,15 @@ Sử dụng model tốt nhất từ `outputs/run_b_sgd/best_model.pt`:
 - confusion matrix: `outputs/run_b_sgd/confusion_matrix.png`
 - ví dụ dự đoán đúng: `outputs/run_b_sgd/examples_correct.png`
 - ví dụ dự đoán sai: `outputs/run_b_sgd/examples_wrong.png`
+
+**Confusion Matrix (Best Model - run_b_sgd)**
+![Run B Confusion Matrix](outputs/run_b_sgd/confusion_matrix.png)
+
+**Ví dụ dự đoán đúng (Best Model)**
+![Run B Correct Examples](outputs/run_b_sgd/examples_correct.png)
+
+**Ví dụ dự đoán sai (Best Model)**
+![Run B Wrong Examples](outputs/run_b_sgd/examples_wrong.png)
 
 ## 7. Trả lời câu hỏi tự kiểm tra
 1. **Vì sao cần tách train/validation/test?**
